@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#tab2 a {
+	height: 23px;
+	display: block;
+	padding: 15px 100px;
+	color: #FFFFFF;
+	font-size: 24px;
+	font-weight: normal;
+	font-family: 'Roboto', Helvetica;
+	background: rgba(255,255,255,0.2);
+	cursor: pointer;
+	position: relative;
+	background-color: #003333;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+}
+
+#mainsection {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	width: 549px;
+	min-height: 500px;
+	margin: 0px auto;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+#mainsectioninside {
+	position: relative;
+	min-height: 500px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align: center;
+}
+
+#mainsectioninside div {
+	display: inline-block;
+}
+
+#mainsectioninside div ul {
+	list-style: none;
+}
+
+#mainsectioninside-appholder {
+	position: relative;
+	min-height: 500px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding-top: 0px;
+}
+
+.tabs input[type=radio] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.tabs {
+	width: 549px;
+	float: none;
+	list-style: none;
+	position: relative;
+	padding: 0;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 75px;
+	margin-left: auto;
+}
+
+.tabs li {
+	float: left;
+	width: 50%;
+}
+
+.tabs label {
+	width: 174px;
+	height: 23px;
+	display: block;
+	padding: 15px 100px;
+	color: #FFFFFF;
+	font-size: 24px;
+	font-weight: normal;
+	font-family: 'Roboto', Helvetica;
+	background: rgba(255,255,255,0.2);
+	cursor: pointer;
+	position: relative;
+	background-color: #003333;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.tabs label:hover {
+	top: 0px;
+	background-color: #FFFFFF;
+	color: #003333;
+}
+
+[id^=tab]:checked + label {
+	background-color: #FFFFFF;
+	color: #003333;
+	top: 0px;
+}
+
+[id^=tab]:checked ~ [id^=tab-content] {
+	display: block;
+}
+
+.tab-content {
+	z-index: 2;
+	display: none;
+	text-align: left;
+	width: 100%;
+	font-size: 20px;
+	padding: 15px;
+	color: white;
+	position: absolute;
+	left: 0px;
+	box-sizing: border-box;
+	-webkit-animation-duration: 0.5s;
+	-o-animation-duration: 0.5s;
+	-moz-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	background-color: #FFFFFF;
+}

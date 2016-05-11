@@ -1,0 +1,465 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*custom font*/
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+    /*form styles*/
+    #ehrupdateform {
+    width: 100%;
+    margin: 0px auto;
+ 
+    position: relative;
+    }
+
+    #ehrupdateform fieldset {
+    border: 0 none;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    /*stacking fieldsets above each other*/
+    position: absolute;
+    top: 0px;
+    }
+    /*Hide all except first fieldset*/
+    #ehrupdateform fieldset:not(:first-of-type) {
+    display: none;
+    }
+    /*inputs*/
+    #ehrupdateform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+    }
+    /*buttons*/
+    #ehrupdateform .action-button {
+		float:right;
+    text-align:center;
+    display: inline-block;
+    height: auto;
+    margin: 0 10px 20px 0;
+    font-weight: normal;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    position: relative;
+    width:173px;
+    outline: none;
+    text-shadow: none;
+    text-decoration: none;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    vertical-align: middle;
+    color: #FFF;
+    background-color: #12225b;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #12225B;
+    font-size: 24px;
+    line-height: 26px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    margin-top:5px;
+    cursor:pointer;
+    }
+    #ehrupdateform .action-button:hover, #ehrupdateform .action-button:focus {
+    color: #666;
+    background-color: #FFF;
+    border: 1px solid #222;
+    border: 1px solid rgba(34,34,34,.2);
+    }
+	
+	#ehrupdateform .action-button2 {
+		float:left;
+    text-align:center;
+    display: inline-block;
+    height: auto;
+    margin: 0 10px 20px 0;
+    font-weight: normal;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    position: relative;
+    width:183px;
+    outline: none;
+    text-shadow: none;
+    text-decoration: none;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    vertical-align: middle;
+    color: #FFF;
+    background-color: #12225b;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #12225B;
+    font-size: 24px;
+    line-height: 26px;
+    padding-top: 14px;
+    padding-right: 15px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+    margin-top:15px;
+    cursor:pointer;
+    }
+    #ehrupdateform .action-button2:hover, #ehrupdateform .action-button:focus {
+    color: #666;
+    background-color: #FFF;
+    border: 1px solid #222;
+    border: 1px solid rgba(34,34,34,.2);
+    }
+	#gobacklogin {
+	float: right;
+	font-size: 10px;
+	font-weight: bold;
+	font-variant: uppercase;		
+	}
+		#ehrupdateform .action-button3 {
+	float: left;
+	text-align: center;
+	display: inline-block;
+	height: auto;
+	margin: 0 5px 10px 0;
+	font-weight: normal;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	position: relative;
+	width: 103px;
+	outline: none;
+	text-shadow: none;
+	text-decoration: none;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	vertical-align: middle;
+	color: #FFF;
+	background-color: #0099FF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #12225B;
+	font-size: 14px;
+	
+
+	cursor: pointer;
+    }
+    #ehrupdateform .action-button3:hover, #ehrupdateform .action-button:focus {
+    color: #666;
+    background-color: #FFF;
+    border: 1px solid #222;
+    border: 1px solid rgba(34,34,34,.2);
+    }
+	
+    /*headings*/
+    .fs-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    }
+    .fs-subtitle {
+    font-weight: normal;
+    font-size: 21px;
+    color: #666;
+    margin-bottom: 20px;
+    }
+    /*progressbar*/
+    #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    }
+    #progressbar li {
+    list-style-type: none;
+    color: #12225B;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 20%;
+    float: left;
+    position: relative;
+    }
+    #progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #FFF;
+    background: #12225B;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+    }
+    /*progressbar connectors*/
+    #progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #12225B;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+    }
+    #progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+    }
+    /*marking active/completed steps green*/
+    /*The number of the step and the connector before it = green*/
+    #progressbar li.active:before,  #progressbar li.active:after{
+    color: white;
+    background-color: #0033FF;
+    }
+    #ehrupdateform checkbox {
+     width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+    }
+    #ehrupdateform label {
+	text-align: left;
+	display: block;
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000000;
+    }
+    #ehrupdateform label2 {
+    text-align: left;
+    display: block;
+ 
+    text-indent: 0px;
+    font-size: 18px;
+    font-weight: normal;
+   color: #000000;
+    }
+    
+    #ehrupdateform #frmseperator {
+    width:900px;
+	height:1px;
+   background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 26%, rgba(255,255,255,1) 52%, rgba(255,255,255,0.98) 53%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0)), color-stop(26%,rgba(255,255,255,0.5)), color-stop(52%,rgba(255,255,255,1)), color-stop(53%,rgba(255,255,255,0.98)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* Opera 12+ */
+
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* IE10+ */
+
+background: radial-gradient(ellipse at center,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+    margin-top:10px;
+    margin-bottom:10px; 
+    }
+    #ehrupdateform #Email {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;    
+    }
+    #coll1 {
+   width:50%;
+    float:left; 
+    
+    }
+    #coll2 {
+    margin-left:20px;
+width:50%;
+    float:left; 
+    }
+	#coll3 {
+    margin-left:20px;
+width:50%;
+    float:left; 
+  
+    }
+	#ehrupdateform #colle1 {
+	
+   width:50%;
+    
+    
+    }
+    #ehrupdateform #autoholder {
+    height:auto;  
+    }
+    #ehrupdateform #barholder {
+    height:100px;   
+    }
+	#ehrupdateform input {
+	display: inline-block;
+	width: 90%;
+	height: auto;
+	font-weight: normal;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	position: relative;
+	outline: none;
+	text-shadow: none;
+	text-decoration: none;
+	color: #000;
+	background-color: #FFFFFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 3px solid #FFFFFF;
+	font-size: 24px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	margin-bottom: 10px;
+	}
+	#ehrupdateform input:active {
+	border: 3px solid #12225B;
+	 -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+	} 
+	#ehrupdateform INPUT:hover {
+	border: 3px solid #12225B;
+	 -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+	} 
+	#ehrupdateform INPUT:focus {
+	border: 3px solid #12225B;
+	 -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+	} 
+	
+	#ehrupdateform INPUT:focus:hover{
+	border: 3px solid #12225B;
+	 -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+	} 
+	
+	
+	#ehrupdateform  input[type=submit] {
+			float:right;
+		 text-align:center;
+    display: inline-block;
+    height: auto;
+    margin: 0 10px 20px 0;
+    font-weight: normal;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    position: relative;
+    width:173px;
+    outline: none;
+    text-shadow: none;
+    text-decoration: none;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    vertical-align: middle;
+    color: #FFF;
+    background-color: #12225b;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #12225B;
+    font-size: 24px;
+    line-height: 26px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    margin-top:5px;
+    cursor:pointer;
+	}
+		#ehrupdateform  input[type=submit]:active {
+	 -moz-box-shadow:    inset 0 0 0px #000000;
+   -webkit-box-shadow: inset 0 0 0px #000000;
+   box-shadow:         inset 0 0 0px #000000;
+	background-color: #003;
+	cursor:pointer;
+	color: #FFF;
+	} 
+	#ehrupdateform  input[type=submit]:hover {
+	 -moz-box-shadow:    inset 0 0 0px #000000;
+   -webkit-box-shadow: inset 0 0 0px #000000;
+   box-shadow:         inset 0 0 0px #000000;
+	background-color: #003;
+	cursor:pointer;
+	color: #FFF;
+	} 
+	#ehrupdateform  input[type=submit]:focus {
+ -moz-box-shadow:    inset 0 0 0px #000000;
+   -webkit-box-shadow: inset 0 0 0px #000000;
+   box-shadow:         inset 0 0 0px #000000;
+	background-color: #003;
+	cursor:pointer;
+	color: #FFF;
+	} 
+	
+	#ehrupdateform  input[type=submit]:focus:hover{
+ -moz-box-shadow:    inset 0 0 0px #000000;
+   -webkit-box-shadow: inset 0 0 0px #000000;
+   box-shadow:         inset 0 0 0px #000000;
+	background-color: #003;
+	cursor:pointer;
+	color: #FFF;
+	} 
+	
+	
+	
+	
+	
+	#formbtnsholder {
+	float:right;	
+	}
+
+#ehrupdateform #reviewinfo {
+	width: 100%;
+	text-align: left;
+	font-family: open_sansregular,Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	position: relative;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 40px;
+	margin-left: auto;
+}
+#ehrupdateform #reviewinfo .userinforev {
+	display:inline;
+	font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFF;
+}
+	

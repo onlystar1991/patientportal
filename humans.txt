@@ -1,0 +1,12 @@
+Your title: Robert McMonagle - Creative Director
+Site: robert@ideskmd.com
+Location: Orange County, United States
+
+* THANKS *
+Name: Robert McMonagle
+
+* SITE *
+Last update: 2014/08/31
+Standards: HTML5, CSS3
+Components: Modernizr, jQuery, etc.
+Software: Codeigniter, PHP, mySql

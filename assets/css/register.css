@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Sign-in Page */
+
+@font-face {
+	font-family: 'Myriad Pro Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Myriad Pro Regular'), url('../fonts/myriadpro-regular.woff') format('woff');
+}
+
+#content {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.logo {
+	margin-top: 8vh;
+}
+
+.title {
+	margin-top: 15px;
+}
+
+#stepsTable {
+	margin: auto;
+	border: none;
+	border-collapse: collapse;
+	position: relative;
+}
+
+#stepsTable td {
+	width: 120px;
+	height: 70px;
+	padding-bottom: 3px;
+	text-align: center;
+	background-color: #031d3e;
+	border-left: 1px solid #FFFFFF;
+}
+
+#stepsTable td:first-child { border-left: none; }
+
+#stepsTable #stepsTableArrow {
+	position: absolute;
+	background: none;
+	width: auto;
+	height: auto;
+	bottom: -6px;
+	border: none;
+	left: 50px;
+	transition: all 1s ease-in-out;
+}
+
+form#msform {
+	position: relative;
+	width: 100%;
+	min-height: 600px;
+}
+
+form#msform input[type=text], form#msform input[type=email], form#msform input[type=password], form#msform select {
+	width: 360px;
+	height: 46px;
+	border: none;
+}
+
+input:focus, select:focus, button:focus { outline: none; }
+
+form#msform fieldset > div {
+	display: inline-block;
+	margin: 10px;
+}
+
+form#msform fieldset .field {
+	padding: 2px 60px 3px 20px;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+	background-size: 20px 20px;
+}
+
+form#msform fieldset .button-container {
+	display: block;
+}
+
+form#msform button {
+	width: 250px;
+	height: 50px;
+	border: none;
+	cursor: pointer;
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	font-family: 'Myriad Pro Regular';
+	font-size: 18px;
+	top: 170px;
+}
+
+form#msform button:hover {
+	color: #021c3d;
+}
+
+form#msform button.next {
+	right: 130px;
+	background-position: 95% 50%;
+	background-image: 	url(../images/rightarrow_05.png),
+						linear-gradient(to right, #031d3e 0%, #031d3e 83%, #207d9e 83%, #207d9e 100%);
+}
+
+form#msform button.next:hover {
+	background-image: 	url(../images/rightarrow_05.png),
+						linear-gradient(to right, #FFFFFF 0%, #FFFFFF 83%, #031d3e 83%, #031d3e 100%);
+}
+
+form#msform button.previous {
+	left: 60px;
+	background-position: 5% 50%;
+	background-image: 	url(../images/arrowback_05.png),
+						linear-gradient(to right, #207d9e 0%, #207d9e 24%, #031d3e 24%, #031d3e 100%);
+}
+
+form#msform button.previous:hover {
+	background-image: 	url(../images/arrowback_05.png),
+						linear-gradient(to right, #031d3e 0%, #031d3e 24%, #FFFFFF 24%, #FFFFFF 100%);
+}
+
+form#msform div.username {
+	background-image: url(../images/imgo.jpg) !important;
+}
+
+form#msform div.firstname {
+	background-image: url(../images/regicons_07.png) !important;
+	background-size: 35px 20px;
+}
+
+form#msform div.lastname {
+	background-image: url(../images/regicons_07.png) !important;
+	background-size: 35px 20px;
+}
+
+form#msform div.password {
+	background-image: url(../images/lock.jpg) !important;
+}
+
+form#msform div.email {
+	background-image: url(../images/email.png) !important;
+	background-size: 25px 20px;
+}
+
+form#msform div.active {
+	box-shadow: inset 0px 0px 0px 2px #021c3d;
+}
+
+form#msform div.active {
+	box-shadow: inset 0px 0px 0px 2px #021c3d;
+}
+
+.styled-select select {
+	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+fieldset {
+	border: 0 none;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0% 10%;
+	transition: all 1s ease-in-out;
+	/*stacking fieldsets above each other*/
+	position: absolute;
+	top: 0px;
+}
+
+/*Hide all except first fieldset*/
+fieldset:not(:first-of-type) {
+	margin: 0 -150%;
+}
+	/*inputs*/
+	#msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+	}
+	#gobacklogin {
+	float: right;
+	font-size: 10px;
+	font-weight: bold;
+	font-variant: uppercase;		
+	}
+	
+	/*headings*/
+	.fs-title {
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+	}
+	.fs-subtitle {
+	font-weight: normal;
+	font-size: 21px;
+	color: #666;
+	margin-bottom: 20px;
+	}
+	input[type="checkbox"] + label span {
+	display: inline-block;
+	width: 33px;
+	height: 33px;
+	margin: -1px 4px 0 0;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: url(../images/check_radio_sheet2.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	}
+	input[type="checkbox"]:checked + label span {
+	background:url(../images/check_radio_sheet2.png) -35px top no-repeat;
+	}
+	#frmseperator {
+	width:900px;
+	height:1px;
+   background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 26%, rgba(255,255,255,1) 52%, rgba(255,255,255,0.98) 53%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0)), color-stop(26%,rgba(255,255,255,0.5)), color-stop(52%,rgba(255,255,255,1)), color-stop(53%,rgba(255,255,255,0.98)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* Opera 12+ */
+
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* IE10+ */
+
+background: radial-gradient(ellipse at center,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 26%,rgba(255,255,255,1) 52%,rgba(255,255,255,0.98) 53%,rgba(255,255,255,0) 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+	margin-top:10px;
+	margin-bottom:10px; 
+	}
+	#Email {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;    
+	}
+	#col1 {
+   
+	float:left; 
+	width:30%
+	}
+	#col2 {
+	margin-left:20px;
+
+	float:left; 
+	width:30%
+	}
+	#col3 {
+	margin-left:20px;
+
+	float:left; 
+   width:30%
+	}
+	#barholder {
+	height:100px;   
+	}
+
+	#formbtnsholder {
+	float:right;	
+	}
+   
+   #regformtitle {
+	text-align: left;
+	font-family: open_sansregular,Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin-bottom:20px;
+}
+#reviewinfo {
+	width: 100%;
+	text-align: left;
+	font-family: open_sansregular,Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	position: relative;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 40px;
+	margin-left: auto;
+}
+#reviewinfo .userinforev {
+	display:inline;
+	font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.alex-dropzone {
+	width: 400px;
+	display: block !important;
+	margin: 10px auto 20px auto !important;
+}
+
+.dz-max-files-reached {
+	pointer-events: none;
+	cursor: default;
+}
+
+.dz-remove {
+	pointer-events: all;
+}

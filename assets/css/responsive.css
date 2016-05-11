@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Responsive Design */
+
+#welcomehead {
+	text-align: center;
+	font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 20px 50px;
+	color: #FFFFFF;
+}
+
+.embed-container {
+	height: 0px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 5;
+	min-height: 630px;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 567px) {
+
+	#msform {
+		min-height: 1000px;
+	}
+
+	#msform #col1 {
+		float: none; 
+		width: 100%
+	}
+
+	#msform #col2 {
+		margin-left: 0px;
+		float: none;  
+		width: 100%
+	}
+
+	#msform #col3 {
+		margin-left: 0px;
+		float: none; 
+		width: 100%
+	}
+
+	#msform input {
+		display: inline-block;
+		width: 100%;
+	}
+
+	#mainbutton {
+		float: none;
+		width: 90%;
+		margin: 10px;
+	}
+
+	#footer {
+		margin-top: -78px; /* negative value of footer height */
+	}
+	
+	#logo {
+		width: 80%;
+		height: 50px;
+		float: left;
+		display: inline;
+		margin: 0px auto;
+		text-align: center;
+		background-image: url(../images/alex-logo400.png);
+		background-repeat: no-repeat;
+		top: 0px;
+	}
+
+	#giffloat {
+		background-size: 100% auto;
+	}
+
+	#giffloat2 {
+		background-size: 100% auto;
+	}
+
+	#mainsectioninside-appholder {
+		width: 95%;
+	}
+}
+
+@media only screen and (min-width : 568px) and (max-width : 767px) {
+
+	#mainsectioninside-appholder {
+		width: 95%;
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width : 1619px) {
+
+	#mainsectioninside-appholder {
+		width: 95%;
+	}
+
+}
+
+@media screen and (min-width: 1620px) {
+
+	#mainbutton {
+		width: 95%;
+	}
+
+}

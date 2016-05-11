@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#appIFrame {
+	height: calc(100% - 158px)
+}
+
+.hidden {
+	opacity: 0;
+}
+
+#LoginForm {
+	display: none;
+}
+
+#header {
+	background: #FFFFFF;
+	border-bottom: 1px solid #000000;
+}
+
+#footer {
+	z-index: 5;
+	bottom: 1px;
+	background: #FFFFFF;
+	border-top: 1px solid #000000;
+}
+
+div#LuaBlackBackground {
+	pointer-events: none;
+}
+
+div#LuaBlackBackground.active {
+	pointer-events: all;
+}
+
+#logo {
+	background-image: url(../images/appview_alexlogo.png) !important;
+}
+
+button {
+	background-image: url(../images/icon_appview_menubtn.png) !important;
+}
+
+.backButton {
+	background-image: url(../images/icon_appview_backbtn.png) !important;
+}
+
+.detailsBox {
+	color: #b9bbbe;
+}
+
+.sidebar li {
+	border: 1px solid #1460BB;
+	background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.sidebar li:hover {
+	background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.sidebar .cameraButton { background-image: url('/assets/images/icon_appview_camerabtn.png') !important; }
+.sidebar .emailButton { background-image: url('/assets/images/icon_appview_emailbtn.png') !important; }
+.sidebar .formBuildButton { background-image: url('/assets/images/icon_appview_formbuilderbtn.png') !important; }
+.sidebar .mediaVaultButton { background-image: url('/assets/images/icon_appview_medivaultbtn.png') !important; }
+.sidebar .adminButton { background-image: url('/assets/images/icon_appview_adminpanelbtn.png') !important; }
+.sidebar .settingsButton { background-image: url('/assets/images/icon_appview_seetingsbtn.png') !important; }
+
+#logoutButton {
+	background-image: url('/assets/images/icon_appview_logoutbtn.png') !important;
+}

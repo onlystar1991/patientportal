@@ -1,0 +1,429 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.pushmenu {
+	background: #3c3933;
+	font-family: Arial, Helvetica, sans-serif;
+	position: fixed;
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.pushmenu h3 {
+	color: #cbbfad;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 15px 20px;
+	margin: 0;
+	background: #282522;	
+	height: 16px;
+}
+
+.pushmenu a {
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	border-top: 1px solid #57544e;
+	border-bottom: 1px solid #312e2a;
+	padding: 14px;
+}
+
+.pushmenu a:hover {
+	background:258ecd;	
+}
+
+.pushmenu a:active {
+	background: #454f5c;
+	color: #fff;	
+}
+
+.pushmenu-left {
+	left: -240px;	
+}
+
+.pushmenu-left.pushmenu-open {
+	left: 0px;	
+}
+
+.pushmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;	
+}
+
+.pushmenu-push-toright {
+	left: 240px;	
+}
+
+/*Transition*/
+.pushmenu, .pushmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;	
+}
+
+#nav_list {
+	cursor: pointer;
+	height: 27px;
+	width: 33px;
+	text-indent: -99999em;
+	background-image: url(../images/icon_nav.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+#nav_list.active {
+	background-position: -33px top;	
+}
+
+.buttonset {
+	background: linear-gradient(center top , #6b85b3, #334d86);
+	background:-moz-linear-gradient(center top , #6b85b3, #334d86);
+	background: -webkit-gradient(linear, center top, center bottom, from(#6b85b3), to(#334d86));
+	height: 16px;
+	padding: 10px 20px 20px;
+}
+
+section.content {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px 20px;	
+}
+
+/*Bottom menu*/
+
+button {
+	margin-top:10px;
+	border: none;
+	height:63px;
+	width: 108px;
+	cursor: pointer;
+	background-image: url(../images/MenuButton.png);
+	background-position: 50% 40%;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	outline: 0;
+	opacity: 0.5;
+	transition: 0.25s all ease-in-out;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+button.menu-lua {
+	background-image: url(../images/LuaButton.png);
+}
+
+button.menu-lua:hover {
+	background-image: url(../images/LuaButtonHover.png);
+}
+
+/* General styles for all menus */
+.cbp-spmenu {
+	
+	position: fixed;
+}
+
+.cbp-spmenu h3 {
+	color: #FFFFFF;
+	font-size: 20px;
+	padding: 15px;
+	height: 49px;
+	margin: 0;
+	font-weight: 300;
+	background: #1a3039;
+}
+
+.cbp-spmenu a {
+	display: block;
+	font-family: open_sansregular;
+	padding-top:3px;
+	font-size: 18px;
+	color: #000;
+	text-decoration: none;
+}
+
+.cbp-spmenu-left a:hover {
+	text-decoration:none;
+	background-color: #FFFFFF;	
+	color: #000033;
+	cursor: pointer;
+	text-shadow: none;
+	-webkit-box-shadow: inset 0 0 20px #07B4EB;
+	-moz-box-shadow: inset 0 0 20px #07B4EB;
+	box-shadow: inset 0 0 20px #07B4EB;
+}
+
+.cbp-spmenu a:active {
+	
+	color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+	width: 150px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+	background-image: url(../images/background.png);
+	background-repeat: repeat-y;	/*overflow-y: scroll;*/
+}
+
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid #FFF;
+	padding: 1em;
+	width: 115px;
+}
+
+.cbp-spmenu-horizontal {
+	width: 100%;
+	height: 160px;
+	left: 0;
+	z-index: 1000;
+	overflow: hidden;
+	background-color: #f8f8f8;
+}
+
+.cbp-spmenu-horizontal h3 {
+	height: 100%;
+	width: 20%;
+	float: left;
+}
+
+.cbp-spmenu-horizontal a {
+	float: left;
+	width: 20%;
+	padding: 0.8em;
+	border-right: 1px solid #000033;
+	border-bottom: 1px solid #000033;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left {
+	left: -240px;
+}
+
+.cbp-spmenu-right {
+	right: -240px;
+}
+
+.cbp-spmenu-lua {
+	right: -100vw;
+}
+
+nav.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-lua.cbp-spmenu-open {
+	width: 0px;
+}
+
+.cbp-spmenu-lua-expanded {
+	width: 980px !important;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+.cbp-spmenu-lua.cbp-spmenu-open {
+	right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+	top: -240px;
+}
+
+.cbp-spmenu-bottom {
+	bottom: -240px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cbp-spmenu-top.cbp-spmenu-open {
+	top: 0px;
+}
+
+.cbp-spmenu-bottom.cbp-spmenu-open {
+	bottom: 0px;
+}
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.cbp-spmenu-push-toright {
+	left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+	left: -150px;
+}
+
+.cbp-spmenu-push-toleft.push-lua {
+	left: 0px;
+}
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 15;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+}
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+
+	.cbp-spmenu-top {
+		top: -110px;
+	}
+
+	.cbp-spmenu-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-lua {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+}
+
+div#LuaBlackBackground {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #000000;
+	opacity: 0;
+	transition: all 0.5s;
+	pointer-events: none;
+	z-index: 6;
+}
+
+div#LuaBlackBackground.active {
+	opacity: 0.8;
+}
+
+div#LuaNotificationsIndicator {
+	position: absolute;
+	right: 110px;
+	top: 10px;
+	background: #FF0000;
+	width: auto;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 20px;
+	padding: 2px 5px;
+	color: #FFFFFF;
+	z-index: 1;
+	font-size: 15px;
+	pointer-events: none;
+	display: none;
+}
+
+div#LuaNotificationsIndicator.active {
+	display: block;
+}
+
+div#LuaLoading {
+	position: absolute;
+	z-index: 6;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 100vh;
+	display: none;
+}
+
+div#LuaLoading.active {
+	display: block;
+}
+
+.cbp-spmenu.cbp-spmenu-horizontal.cbp-spmenu-bottom .swiper-container {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+}
+
+.cbp-spmenu.cbp-spmenu-horizontal.cbp-spmenu-bottom .swiper-slide {
+	width: 140px;
+	height: 140px;
+}
+
+.cbp-spmenu.cbp-spmenu-horizontal.cbp-spmenu-bottom .swiper-container a {
+	width: 100%;
+	height: 140px;
+	border: none;
+	padding: 0;
+}
+
+.cbp-spmenu.cbp-spmenu-horizontal.cbp-spmenu-bottom .swiper-container a div {
+	background-size: 120px;
+}
+
+.cbp-spmenu.cbp-spmenu-horizontal.cbp-spmenu-bottom .swiper-container #whiteblock {
+	margin: 10px auto auto auto;
+	height: 140px;
+	width: 140px;
+	background-size: 140px;
+}
+
+button.menu-video {
+	background-image: url(../images/videochat.png);
+}
+
+button.menu-email {
+	background-image: url(../images/sidebaremailicon.png);
+}

@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* CSS Document */
+a {
+color:#252f61;	
+}
+
+#buttonboxback {
+	display:inline;
+	float:left;
+	top:10px;
+	left:0px;
+	width: 10%;
+	height: 40px;
+	padding-top:0px;
+	margin-left: 5px;
+	border-radius: 5px;
+	font-size:18px;
+}
+
+.button {
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: baseline;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .4em;
+	-moz-border-radius: .4em;
+	border-radius: .4em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	font-family: geneva, Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	line-height: 100%;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-right: 2px;
+	margin-bottom: 0;
+	margin-left: 2px;
+	padding-top: 0.45em;
+	padding-right: 3em;
+	padding-bottom: 0.45em;
+	padding-left: 3em;
+	color: #000033;
+}
+
+.button:hover {
+	text-decoration: none;
+}
+
+.button:active {
+	position: relative;
+	top: 1px;
+}
+
+#mainbutton {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: 0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff');
+	background-color:#fff;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	display:inline-block;
+	color:#252f61;
+	font-family:open_sansregular;
+	font-size:20px;
+	font-weight:700;
+	font-style:normal;
+	height:68px;
+	line-height:22px;
+	width:95%;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0 #fff;
+	text-transform:uppercase;
+	padding-top:20px;
+	cursor:pointer;
+	border: thin solid #fff;
+}
+
+#mainbutton:visited {
+	text-decoration:none;
+	color:#252f61;
+}
+
+#mainbutton:hover {
+	text-decoration:none;
+	position: relative;
+	background-color: #FFFFFF;
+	color: #fff;
+	opacity: 0.4;
+	color: #000033;
+	cursor: pointer;
+	text-shadow: none;
+	border: thin solid #006;
+	-webkit-box-shadow: inset 0 0 20px #07B4EB;
+	-moz-box-shadow: inset 0 0 20px #07B4EB;
+	box-shadow: inset 0 0 20px #07B4EB;
+}
+
+#mainbutton:active {
+	text-decoration:none;
+position:relative;
+background-color:#164B83;
+color: #FFFFFF;
+	cursor: pointer;
+	text-shadow:none;
+}
+#mainbutton:a{
+	text-decoration:none;
+color: #000033;
+}

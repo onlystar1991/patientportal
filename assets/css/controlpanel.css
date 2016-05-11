@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.slideout-menu {
+	position: fixed;
+	top: 0;
+	left: -252px;
+	width: 250px;
+	height: 100%;
+	background-color: #FFFFFF;
+	border: thin solid #006;
+	z-index: 100;
+}
+
+.slideout-menu h3 {
+	position: relative;
+	padding: 12px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 400;
+	border-bottom: 4px solid #222;
+}
+.slideout-menu .slideout-menu-toggle {
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	display: inline-block;
+	padding: 6px 9px 5px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	background: #222;
+	color: #999;
+	text-decoration: none;
+	vertical-align: top;
+}
+.slideout-menu .slideout-menu-toggle:hover {
+	color: #fff;
+}
+.slideout-menu ul {
+	list-style: none;
+	font-weight: 300;
+	border-top: 1px solid #006;
+	border-bottom: 1px solid #006;
+}
+.slideout-menu ul li {
+	border-top: 1px solid #006;
+	border-bottom: 1px solid #006;
+}
+.slideout-menu ul li a {
+	position: relative;
+	display: block;
+	padding: 10px;
+	color: #999;
+	text-decoration: none;
+}
+.slideout-menu ul li a:hover {
+text-decoration:none;
+position: relative;
+background-color: #FFFFFF;
+color: #fff;
+opacity: 0.4;
+color: #000033;
+cursor: pointer;
+text-shadow: none;
+border: thin solid #006;
+-webkit-box-shadow: inset 0 0 20px #07B4EB;
+-moz-box-shadow: inset 0 0 20px #07B4EB;
+box-shadow: inset 0 0 20px #07B4EB;
+}
+.slideout-menu ul li a i {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	opacity: .5;
+}
+
+.header {
+	padding: 15px;
+	background: #000;
+}
+.header .slideout-menu-toggle {
+	font-size: 1.2em;
+	color: #999;
+	text-decoration: none;
+}
+.header .slideout-menu-toggle:hover {
+	color: #fff;
+}
+.header .slideout-menu-toggle i {
+	vertical-align: top;
+	margin: 5px 3px 0 0;
+}

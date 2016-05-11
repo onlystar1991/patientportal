@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#controlsiconholder #controlsicon {
+	border-radius: 10px !important;
+	height: 166px !important;
+	line-height: 190px;
+}
+
+#controlsiconholder {
+	opacity: 0.25 !important;
+	transition: 0.3s opacity ease-in-out;
+}
+
+#controlsiconholder:hover {
+	opacity: 1 !important;
+}
+
+#header {
+	position: fixed;
+	z-index: 5;
+}
+
+#footer {
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	bottom: 0;
+}
+
+#dashboardtitle {
+	padding-top: 100px !important;
+	text-transform: uppercase;
+}
+
+#gearbutton {
+	position: relative;
+	margin: 30px auto 40px auto;
+	width: 182px;
+	height: 42px;
+	background-color: #0c1f27;
+	color: #FFFFFF;
+	line-height: 42px;
+	border-radius: 12px;
+	border: 2px solid #000000;
+	box-shadow: 0px 0px 5px -2px #FFFFFF;
+	font-size: 28px;
+	cursor: pointer;
+}
+
+#gearbutton #leftSide {
+	position: absolute;
+	left: 20px;
+}
+
+#gearbutton #rightSide {
+	position: absolute;
+	right: 20px;
+}
+
+#gearbutton #lock {
+	position: absolute;
+	background: url(../images/lockbtn.png);
+	height: 42px;
+	width: 91px;
+	background-repeat: no-repeat;
+	z-index: 1;
+	left: 0px;
+	transition: 0.5s all ease-in-out;
+}
+
+#gearbutton #lock.off {
+	left: 91px;
+	background: url(../images/unlockbtn.png);
+	background-repeat: no-repeat;
+}
+
+#credsVerification {
+	display: none;
+	width: 200px;
+	height: 200px;
+}

@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Sign-in Page */
+
+@font-face {
+	font-family: 'Myriad Pro Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Myriad Pro Regular'), url('../fonts/myriadpro-regular.woff') format('woff');
+}
+
+#content {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.logo {
+	margin-top: 8vh;
+}
+
+form {
+	margin-top: 3vh;
+}
+
+#ssllogo {
+	width: 208px;
+	height: 53px;
+	display: inline-block;
+	background-image: url(../images/securitylogos_46.png);
+	background-repeat: no-repeat;
+}
+
+#hipaalogo {
+	width: 150px;
+	height: 55px;
+	display: inline-block;
+	background-image: url(../images/securitylogos_47.png);
+	background-repeat: no-repeat;
+}
+
+div#securityLogos div {
+	margin: 10px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+form li input, form li button {
+	width: 400px;
+	height: 50px;
+	border: none;
+	cursor: pointer;
+}
+
+form li input:hover, form li button:hover {
+	background-color: #FFFFFF;
+	color: #021c3d;
+}
+
+form li input[type=text], form li input[type=email], form li input[type=password] {
+	width: 320px;
+	height: 46px;
+	border: none;
+}
+
+form li button, form li div, form li input[type=submit] {
+	margin: 5px;
+}
+
+form li div {
+	display: inline-block;
+	padding: 2px 60px 3px 20px;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+	background-size: 20px 20px;
+}
+
+form div.username {
+	background-image: url(../images/imgo.jpg) !important;
+}
+
+form div.password {
+	background-image: url(../images/lock.jpg) !important;
+}
+
+form div.email {
+	background-image: url(../images/email.png) !important;
+	background-size: 25px 20px;
+}
+
+form div.username.active {
+	box-shadow: inset 0px 0px 0px 2px #021c3d;
+}
+
+form div.password.active {
+	box-shadow: inset 0px 0px 0px 2px #021c3d;
+}
+
+form input[type=submit] {
+	background-color: #C3E1E7;
+	color: #000000;
+	font-family: 'Myriad Pro Regular';
+	font-size: 16px;
+}
+
+form button {
+	background-color: #203D43;
+	color: #FFFFFF;
+	font-family: 'Myriad Pro Regular';
+	font-size: 16px;
+}
+
+#cboxContent {
+	background-color: #d7d7d7 !important;
+}
+
+.forgotPasswordLink {
+	outline: none;
+}
+
+.forgotPasswordSpan {
+	text-align: right;
+	width: 400px;
+	display: inline-block;
+	font-family: 'Myriad Pro Regular';
+	font-size: 14px;
+	margin-top: 5px;
+	color: #FFFFFF;
+}
+
+#forgotPasswordDiv {
+	background-color: #d7d7d7;
+	text-align: center;
+	padding: 15px;
+}
+
+#forgotPasswordDiv .title {
+	margin-top: 15px;
+}
+
+.forgotPasswordSubmitButton {
+	background-image: 	url(../images/rightarrow_05.png),
+						linear-gradient(to right, #031d3e 0%, #031d3e 85%,#207d9e 85%,#207d9e 85%,#207d9e 100%);
+	background-position: 95% 50%;
+	background-repeat: no-repeat;
+}
+
+.forgotPasswordSubmitButton:hover {
+	background-image: 	url(../images/rightarrow_05.png),
+						linear-gradient(to right, #FFFFFF 0%, #FFFFFF 85%, #031d3e 85%, #031d3e 85%, #031d3e 100%);
+	color: #000000;
+}
+
+.responseMessage {
+	height: 1px;
+	transition: height 1s ease-in-out;
+}
+
+.responseMessage .message {
+	opacity: 0;
+	transition: all 1s ease-in-out;
+}
+
+.responseMessage .loadingImage {
+	opacity: 0;
+	transition: all 1s ease-in-out;
+}
+
+.responseMessage p span {
+	display: block;
+}

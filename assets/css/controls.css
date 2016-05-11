@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.rightSidebar {
+	top: 80px;
+	right: -10px;
+	width: 120px;
+	height: 700px;
+	z-index: 10;
+	position: fixed;
+	display: none;
+}
+
+.rightSidebar.visible {
+	display: block;
+}
+
+.rightSidebar li {
+	background-color: rgba(0, 0, 0, 0.15);
+	background-repeat: no-repeat;
+	margin-bottom: 2px;
+	font-size: 25px;
+	color: #FFFFFF;
+	transition: 0.25s background-color ease-in-out;
+	overflow: hidden;
+}
+
+.rightSidebar li:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	color: #1B3C46;
+}
+
+.rightSidebar ul {
+	margin: 0px;
+}
+
+.sidebar li {
+	width: 110px;
+	height: 90px;
+	background-position: 50% 50%;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.sidebar .cameraButton { background-image: url('/assets/images/icon_camerabtn.png'); }
+.sidebar .emailButton { background-image: url('/assets/images/icon_emailbtn.png'); }
+.sidebar .formBuildButton { background-image: url('/assets/images/icon_formbuilderbtn.png'); }
+.sidebar .mediaVaultButton { background-image: url('/assets/images/icon_medivaultbtn.png'); }
+.sidebar .adminButton { background-image: url('/assets/images/icon_adminpanelbtn.png'); }
+.sidebar .settingsButton { background-image: url('/assets/images/icon_settingsbtn.png'); }
