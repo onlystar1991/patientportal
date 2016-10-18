@@ -11,12 +11,12 @@
 		<link rel="canonical" href="https://ideskmd.com/" />
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/main.css">
-		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/rightSidebar.js"></script>
-		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/notify.js"></script>
-		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/jquery-ui.js"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/rightSidebar.js" type="text/javascript"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/scripts/notify.js" type="text/javascript"></script>
+		<script src="<?php echo base_url();?>assets/scripts/jquery-ui.js"></script>
 		
 		<script type="text/javascript">
 			var _gaq = _gaq || [];

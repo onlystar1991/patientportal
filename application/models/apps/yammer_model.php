@@ -9,7 +9,7 @@ class Yammer_model extends App_base_model {
 
 	public static $blockTopNavigation = true;
 	
-	public static function init($user_id=false) {
+	public static function init($user_id) {
 		self::$name = "yammer";
 		self::$loginType = "client";
 

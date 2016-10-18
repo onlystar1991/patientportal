@@ -7,7 +7,7 @@ class Securepem_model extends App_base_model {
 	public static $name;
 	public static $loginType;
 
-	public static function init($user_id=false) {
+	public static function init($user_id) {
 		self::$name = "securepem";
 		self::$loginType = "client";
 

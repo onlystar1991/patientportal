@@ -9,7 +9,7 @@ class Bluestep_lgcns_2_model extends Bluestep_model {
 	public static $name;
 	public static $loginType;
 	
-	public static function init($user_id=false) {
+	public static function init($user_id) {
 		self::$name = "bluestep_lgcns_2";
 		$app = parent::init($user_id);
 		return $app;

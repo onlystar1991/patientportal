@@ -82,7 +82,6 @@
 		<div class="callDiv">
 			<div class="one-on-one">
 				<div class="caller" id="audio_caller">
-					<button class="switch-call" value="Switch To Video Call"></button>
 					<div class="hangup"></div>
 				</div>
 				<div class="callee">

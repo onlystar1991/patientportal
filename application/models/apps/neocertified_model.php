@@ -8,7 +8,7 @@ class Neocertified_model extends App_base_model {
 	public static $loginType;
 	public static $blockTopNavigation = true;
 
-	public static function init($user_id=false) {
+	public static function init($user_id) {
 		self::$name = "neocertified";
 		self::$loginType = "server";
 

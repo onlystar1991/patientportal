@@ -137,25 +137,6 @@
 													<input type="text" class="form-control" id="phone" name="phone" value="<?=$office->phone?>">
 												</div>
 											</div>
-											<div class="col-md-6">
-												<div class="panel-body">
-													<?php
-													foreach ($appsPermission as $appName => $canAccess) { ?>
-													<div class="checkbox clip-check check-primary checkbox-inline">
-														<input type="checkbox" id="<?=$appName?>-checkbox"
-														name="permissionCheckbox[<?=$appName?>]"
-														value="<?=$appName?>"
-														<?php if($canAccess) { ?> checked<?php } ?>>
-
-														<label for="<?=$appName?>-checkbox">
-															<?=$appName?>
-														</label>
-													</div>
-													<?php
-													}
-													?>
-												</div>
-											</div>
 										</div>
 									</fieldset>
 									<div class="row">

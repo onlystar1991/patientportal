@@ -13,8 +13,6 @@ class App_base_model extends CI_Model {
 	public $url;
 	public $redirectionURL;
 	public $cookiesToRemove = array();
-
-	private $brandsWithPermission;
 	
 	public function __construct()
 	{
@@ -24,69 +22,27 @@ class App_base_model extends CI_Model {
 		require_once('simpletest/browser.php');
 	}
 
-	public static function init($user_id=false) {
+	public static function init($user_id) {
 
 		$app = new static();
-		$app->credentials = false;
+		$app->user_id = $user_id;
 
 		$CI =& get_instance();
-
-		if($user_id !== false) {
-			$app->user_id = $user_id;
-
-			$CI->db->where('user_id', $user_id);
-			$query = $CI->db->get('app_' . static::$name);
-
-			$returned_value = $query->result();
-
-			if($returned_value) {
-				$returned_value = $returned_value[0];
-				$returned_value = static::decrypt_row($returned_value);
-				unset($returned_value->user_id);
-				$app->credentials = $returned_value;
-			}
-		}
-
-		$app->brandsWithPermission = array();
-
-		$CI->db->where('app_name', static::$name);
-		$query = $CI->db->get("brands_apps_permissions");
+		$CI->db->where('user_id', $user_id);
+		$query = $CI->db->get('app_' . static::$name);
 
 		$returned_value = $query->result();
 
-		foreach($returned_value as $row) {
-			$app->brandsWithPermission[$row->brand_id] = $row->can_access;
+		if(!$returned_value) {
+			$app->credentials = false;
+		} else {
+			$returned_value = $returned_value[0];
+			$returned_value = static::decrypt_row($returned_value);
+			unset($returned_value->user_id);
+			$app->credentials = $returned_value;
 		}
 
 		return $app;
-	}
-
-	public function __get($name) {
-		if($name == "brandsWithPermission")
-			return $this->brandsWithPermission;
-
-		return false;
-	}
-
-	public function set_brand_permission($brand_id, $value) {
-		$this->brandsWithPermission[$brand_id] = $value;
-
-		$CI =& get_instance();
-		$CI->db->where("app_name", static::$name);
-		$CI->db->where("brand_id", $brand_id);
-		$query = $CI->db->get("brands_apps_permissions");
-
-		if($query->result()) {
-			$CI->db->where("app_name", static::$name);
-			$CI->db->where("brand_id", $brand_id);
-			$CI->db->update("brands_apps_permissions", array("can_access" => $value));
-		} else {
-			$insertionArray = array("app_name" => static::$name,
-									"brand_id" => $brand_id,
-									"can_access" => $value);
-
-			$CI->db->insert("brands_apps_permissions", $insertionArray);
-		}
 	}
 
 	public static function availableApps() {

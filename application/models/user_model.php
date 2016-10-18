@@ -13,7 +13,7 @@ class User_model extends CI_Model {
 	public $profile_picture;
 	public $apps;
 
-	public $office_id;
+	private $office_id;
 
 	public function __construct()
 	{
@@ -27,7 +27,7 @@ class User_model extends CI_Model {
 		if(empty($data)) { return false; }
 
 		$keysArray = array('id', 'username', 'password', 'email', 'cell_phone');
-		$dbArray = array('id', 'first_name', 'last_name', 'username', 'email', 'office_id', 'office_phone', 'cell_phone', 'user_role', 'profile_picture', 'show_gears');
+		$dbArray = array('id', 'first_name', 'last_name', 'username', 'email', 'office_id', 'office_phone', 'cell_phone', 'user_role', 'profile_picture');
 
 		if(array_values(array_intersect($keysArray, array_keys($data))) != array_values(array_keys($data))) { return false; }
 

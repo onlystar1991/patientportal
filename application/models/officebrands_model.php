@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('BASEPATH')) exit('No direct script access allowed');
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Officebrands_model extends CI_Model {
 	
@@ -12,7 +12,6 @@ class Officebrands_model extends CI_Model {
 	public $state;
 	public $zip_code;
 	public $phone;
-	public $apps;
 
 	public function __construct()
 	{
@@ -43,6 +42,8 @@ class Officebrands_model extends CI_Model {
 		}
 
 		return $office;
+
+		return null;
 	}
 
 	public static function all() {
@@ -78,26 +79,13 @@ class Officebrands_model extends CI_Model {
 		if(empty(array_keys($data))) { return false; }
 
 		$columns = $this->db->list_fields('brands');
-
-		$brandPermission = isset($data["permissionCheckbox"]) ? $data["permissionCheckbox"] : array();
-		unset($data["permissionCheckbox"]); #So that the next condition doesn't always fail
-
-		if(array_values(array_intersect($columns, array_keys($data))) != array_values(array_keys($data))) { echo "FAAAAALSE!"; return false; }
+		if(array_values(array_intersect($columns, array_keys($data))) != array_values(array_keys($data))) { return false; }
 
 		$this->db->where('id', $this->id);
 		$this->db->update('brands', $data);
 
 		foreach ($data as $key => $value) {
 			$this->$key = $value;
-		}
-
-		$availableApps = App_base_model::availableApps();
-
-		foreach ($availableApps as $appName) {
-			require_once(dirname(__FILE__) . "/../models/apps/" . $appName . "_model.php");
-			$app = ucfirst($appName) . "_model";
-			$app = $app::init();
-			$app->set_brand_permission($this->id, isset($brandPermission[$appName]) && $brandPermission[$appName] == true);
 		}
 	}
 }

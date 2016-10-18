@@ -7,7 +7,7 @@ class Eldermark_model extends App_base_model {
 	public static $name;
 	public static $loginType;
 
-	public static function init($user_id=false)
+	public static function init($user_id)
 	{
 		self::$name = "eldermark";
 		self::$loginType = "server";

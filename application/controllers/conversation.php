@@ -13,7 +13,7 @@ class Conversation extends CI_Controller {
 
 		if($this->session->userdata('user_id')) {
 			$this->load->model('tokbox_model');
-			$this->data['tokbox_api_key'] = TOKBOX_API_KEY;
+			$this->data['tokbox_api_key'] = TOKBOX_API_KEY; // API KEY
 			$this->data['notifications_session'] = TOKBOX_NOTIFICATIONS_SESSION;
 			$this->data['notifications_token'] = $this->tokbox_model->generateToken(TOKBOX_NOTIFICATIONS_SESSION, $this->session->userdata['user_name']);
 		}

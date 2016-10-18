@@ -4,10 +4,22 @@
 <script type="text/javascript" src="<?=base_url()?>assets/scripts/medivault.js"></script>
 <link rel="stylesheet" href="<?=base_url()?>assets/css/credentials.css">
 
+<script>
+	$(document).ready(function() {
+
+		$(".inline").colorbox({iframe: true, innerWidth:'50%', innerHeight:'70%'});  
+
+		$(".inlineButton").click(function(){ 
+			$(".inline:first").click();
+			return false;
+		});
+	});
+</script>
+
 	<div id="dashboardtitle">Dr. <?php echo $this->session->userdata('user_name'); ?>'s Medivault</div>
 	<div class="clear"></div>
 	<div id="gearbutton">
-		<div id="lock"<?php if(!$needsToVerify) { ?> class="off"<?php } ?>></div>
+		<div id="lock"></div>
 		<div id="leftSide">OFF</div>
 		<div id="rightSide">ON</div>
 	</div>

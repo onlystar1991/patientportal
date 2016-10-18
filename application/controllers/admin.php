@@ -53,26 +53,6 @@ class Admin extends CI_Controller {
 
 		$data['office'] = $office;
 
-		$appsPermission = array();
-
-		$apps = App_base_model::availableApps();
-
-		foreach ($apps as $appName) {
-			require_once(dirname(__FILE__) . "/../models/apps/" . $appName . "_model.php");
-			$app = ucfirst($appName) . "_model";
-			$app = $app::init();
-
-			# Either office_id is not in array, or it's set to true
-			# (true as in can indeed access app)
-			if(!isset($app->brandsWithPermission[$id]) || $app->brandsWithPermission[$id] == true) {
-				$appsPermission[$appName] = true;
-			} else {
-				$appsPermission[$appName] = false;
-			}
-		}
-
-		$data['appsPermission'] = $appsPermission;
-
 		$this->load->view('/admin/header_view', $data);
 		$this->load->view('/admin/edit_office_view', $data);
 		$this->load->view('/admin/footer_view', $data);
@@ -117,6 +97,7 @@ class Admin extends CI_Controller {
 			|| empty($_POST['office_phone']) || empty($_POST['cell_phone'] || empty($_POST['office_id'])))
 			&& $this->validate_user_data()) {
 
+			var_dump($_FILES);
 			if(!empty($_FILES) && !empty($_FILES['file']['tmp_name'])) {
 				$id = $this->upload_file();
 				$_POST['profile_picture'] = $id;

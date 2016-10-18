@@ -42,9 +42,6 @@
 		});
 
 		audioSession.on("streamCreated", function(event) {
-			console.log("audio----------");
-			console.log(audioSession);
-
 			if (Object.keys(audioConnections).length > 2) {
 				one_to_many_audio = true;
 				swithOneToManyCallAudio(true);
@@ -202,6 +199,7 @@
 
 	function swithOneToManyCallAudio(flag) {
 		if (flag) {
+			
 			$("#audioContactsList").removeClass("active");
 			$("#audio_caller").appendTo($('#small_caller_audio'));
 			$("#audioCallWindow").addClass('many');
@@ -227,9 +225,7 @@
 				break;
 			}
 		}
-
-		console.log("audio contact list clicked");
-
+		console.log("audo contact list clicked");
 		if (!audioSession) {
 			$.ajax({
 				url: "<?= base_url().'conversation/videoCall' ?>",
@@ -240,6 +236,7 @@
 					if (response.status == "success") {
 						audio_session_id = response.session_id;
 						audio_token = response.token;
+						
 						var data = {
 							title: 'StartAudioChat',
 							session_id: audio_session_id,
@@ -351,9 +348,6 @@
 					$("#audioContactsList").removeClass("active");
 				}
 				break;
-			case 'SwitchCall':
-
-				break;
 		}
 	});
 
@@ -368,7 +362,7 @@
 		delete audio_subscribers;
 		
 		var data = {
-			title: 'EndAudioChat',
+			title: 'EndaudioChat',
 		}
 
 		session.signal({
@@ -387,47 +381,6 @@
 		$("#audioCallWindow").addClass("active");
 		$("#audiocallWindow .callDiv").removeClass("active");
 		$("#audioContactsList").removeClass("active");
-	});
-
-	$(".switch-call").click(function(e) {
-		
-		if (!audioChatWith) {
-			return false;
-		}
-		var _session_id;
-		var _token;
-		
-		$.ajax({
-			url: "<?= base_url().'conversation/videoCall' ?>",
-			data: {from: "<?php echo $this->session->userdata['user_id']; ?>", to: audioChatWith.data },
-			dataType: "JSON",
-			type: "POST",
-			success: function(response) {
-				if (response.status == "success") {
-					_session_id = response.session_id;
-					_token = response.token;
-					var data = {
-						title: "SwitchCall",
-						token: _token,
-						session_id: _session_id,
-					};
-
-					session.signal({
-							to: audioChatWith,
-							type: 'audio',
-							data: JSON.stringify(data)
-						},
-						function(error) {
-							if (error) {
-								console.log("switch call signal error (" + error.code + "): " + error.message);
-							} else {
-								console.log("switch call signal sent.");
-							}
-						}
-					);
-				}
-			}
-		});
 	});
 </script>
 <?php } ?>

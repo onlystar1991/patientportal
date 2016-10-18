@@ -4,7 +4,6 @@ class User extends CI_Controller {
 
 	private $testmode;
 	private $data;
-	private $needsToVerify;
 
 	public function __construct($testmode = false) {
 		parent::__construct();
@@ -34,12 +33,6 @@ class User extends CI_Controller {
 			$this->data['notifications_session'] = TOKBOX_NOTIFICATIONS_SESSION;
 			$this->data['notifications_token'] = $this->tokbox_model->generateToken(TOKBOX_NOTIFICATIONS_SESSION, $this->session->userdata['user_name']);
 		}
-
-		$thirtyMinsAgo = new DateTime( "-30 minutes", new DateTimeZone("UTC"));
-		$thirtyMinsAgo = $thirtyMinsAgo->getTimestamp();
-
-		# Stores the condition
-		$this->needsToVerify = $this->session->userdata("lastMedivaultLoginTimestamp") < $thirtyMinsAgo;
 	}
 
 	public function index($error = false) {
@@ -69,29 +62,7 @@ class User extends CI_Controller {
 
 	public function newmedivault() {
 		$user_id = $this->session->userdata['user_id'];
-		$user = User_model::init(array("id" => $user_id));
-
-		$data = $this->data;
-
 		$apps = App_base_model::availableApps();
-		$office_id = $user->office->id;
-
-		$data["allApps"] = array();
-
-		foreach ($apps as $value) {
-			require_once(dirname(__FILE__) . "/../models/apps/" . $value . "_model.php");
-		}
-
-		foreach ($apps as $appStr) {
-			$user_id = $this->session->userdata['user_id'];
-
-			$app = ucfirst($appStr) . "_model";
-			$app = $app::init($user_id);
-
-			if(!isset($app->brandsWithPermission[$office_id]) || $app->brandsWithPermission[$office_id == true]) {
-				array_push($data["allApps"], $appStr);
-			}
-		}
 
 		$gears = $this->input->get('gears');
 		$gearsStatus = null;
@@ -110,10 +81,13 @@ class User extends CI_Controller {
 			$this->user_model->update_user_data($user_id, array('show_gears' => $gearsStatus));
 		}
 
+		$user_data = $this->user_model->get_user_data($user_id);
+
+		$data = $this->data;
 		$data['title']= 'MediVault';
-		$data['gears'] = $user->show_gears;
+		$data['gears'] = $user_data->show_gears;
 		$data['loggedIn'] = true;
-		$data['needsToVerify'] = $this->needsToVerify;
+		$data['allApps'] = $apps;
 
 		$this->load->view('header_view', $data);
 		$this->load->view('medivault_view', $data);
@@ -122,17 +96,11 @@ class User extends CI_Controller {
 
 	public function credentials($app = null) {
 
+		//SecurePEM
+
 		$data = $this->data;
 
 		$userObject = User_model::init(array('id' => $this->session->userdata('user_id')));
-
-		$thirtyMinsAgo = new DateTime( "-30 minutes", new DateTimeZone("UTC"));
-		$thirtyMinsAgo = $thirtyMinsAgo->getTimestamp();
-
-		if($this->needsToVerify) {
-			redirect('/user/verify_creds');
-			return false;
-		}
 
 		if(property_exists($userObject->apps, $app)) {
 			$appModel = $userObject->apps->$app;
@@ -148,33 +116,6 @@ class User extends CI_Controller {
 			$this->load->view("credentials/main_view", $data);
 		}
 	}
-
-	public function verify_creds() {
-		$data = $this->data;
-
-		if(isset($_POST["password"])) {
-			$user_id = $this->session->userdata('user_id');
-			$user = User_model::init(array("id" => $user_id, "password" => $_POST["password"]));
-
-			$response = new stdClass();
-
-			if($user !== false) {
-				$timeNow = new DateTime( "now", new DateTimeZone("UTC"));
-				$timeNow = $timeNow->getTimestamp();
-
-				$this->session->set_userdata("lastMedivaultLoginTimestamp", $timeNow);
-
-				$response->status = "success";
-			} else {
-				$response->status = "failed";
-				$response->message = "Wrong password";
-			}
-
-			echo(json_encode($response));
-		} else {
-			$this->load->view("medivault_login_view", $data);
-		}
-	}
 	
 	public function settings()
 	{
@@ -183,7 +124,7 @@ class User extends CI_Controller {
 
 		$post_data = $this->input->post();	//Retrieve all POST data
 
-		if($this->user_model->update_user_data($this->session->userdata('user_id'), $post_data) == 2) {	//Updates user data using the POST data
+		if($this->user_model->update_user_data($this->session->userdata['user_id'], $post_data) == 2) {	//Updates user data using the POST data
 			$this->load->view('password_update_successful_view');
 		}
 

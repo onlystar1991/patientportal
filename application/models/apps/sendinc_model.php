@@ -15,7 +15,7 @@ class Sendinc_model extends App_base_model {
 		require_once('simpletest/browser.php');
 	}
 
-	public static function init($user_id=false)
+	public static function init($user_id)
 	{
 		self::$name = "sendinc";
 		self::$loginType = "server";
